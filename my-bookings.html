@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رزروهای من — هتل اصفهان</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* مودال پیش‌فرض مخفی است */
+    #cancelModal { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- نوار ناوبری -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <span class="logo-icon">🏛️</span>
+        <span>هتل اصفهان</span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="rooms.html">اتاق‌ها</a></li>
+        <li><a href="my-bookings.html" class="active">رزروهای من</a></li>
+        <li><a href="rooms.html" class="btn-nav-book">رزرو کنید</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false">
+        <span class="menu-icon-open">☰</span>
+        <span class="menu-icon-close">✕</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html"><span class="mm-icon">🏠</span> خانه</a>
+      <a href="rooms.html"><span class="mm-icon">🛏️</span> اتاق‌ها</a>
+      <a href="my-bookings.html"><span class="mm-icon">📋</span> رزروهای من</a>
+      <a href="rooms.html" class="btn-mobile-book">رزرو کنید</a>
+    </div>
+  </nav>
+
+  <!-- هدر -->
+  <div style="background:linear-gradient(135deg,#0c4a6e,#0891b2);padding:3rem 1.5rem;text-align:center;color:white;">
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;margin-bottom:0.5rem;">رزروهای من</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;">مدیریت و پیگیری رزروهای شما</p>
+  </div>
+
+  <div style="max-width:900px;margin:0 auto;padding:2.5rem 1.5rem;">
+    <div id="statsRow" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;"></div>
+    <div id="bookingsList"></div>
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <div class="empty-icon">📋</div>
+      <h3>هنوز رزروی ندارید</h3>
+      <p>با انتخاب اتاق مناسب، اولین رزرو خود را ثبت کنید</p>
+      <a href="rooms.html" class="btn-primary" style="display:inline-block;margin-top:1.5rem;">مشاهده اتاق‌ها</a>
+    </div>
+  </div>
+
+  <!-- مودال لغو رزرو — فقط با CSS کنترل display می‌شود -->
+  <div id="cancelModal">
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:200;display:flex;align-items:center;justify-content:center;" id="modalBackdrop">
+      <div style="background:white;border-radius:20px;padding:2rem;max-width:400px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+        <div style="font-size:3rem;margin-bottom:1rem;">⚠️</div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.7rem;color:#1e293b;">لغو رزرو</h3>
+        <p style="color:#64748b;font-size:0.92rem;margin-bottom:1.5rem;">آیا مطمئن هستید که می‌خواهید این رزرو را لغو کنید؟</p>
+        <div style="display:flex;gap:1rem;justify-content:center;">
+          <button class="btn-danger" id="confirmCancelBtn">بله، لغو کن</button>
+          <button class="btn-outline" id="closeCancelBtn">خیر، برگشت</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- پیام موفقیت -->
+  <div class="success-toast" id="successToast">🗑️ رزرو با موفقیت لغو شد</div>
+
+  <!-- فوتر -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">🏛️ هتل اصفهان</div>
+          <p style="font-size:0.88rem;line-height:1.9;">در قلب تاریخی‌ترین شهر ایران.</p>
+        </div>
+        <div>
+          <div class="footer-title">لینک‌های سریع</div>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="rooms.html">اتاق‌ها</a></li>
+            <li><a href="my-bookings.html">رزروهای من</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">تماس با ما</div>
+          <ul class="footer-links">
+            <li><a href="#">📍 اصفهان، میدان نقش‌جهان</a></li>
+            <li><a href="#">📞 ۰۳۱-۱۲۳۴-۵۶۷۸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© ۱۴۰۴ هتل اصفهان</span></div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

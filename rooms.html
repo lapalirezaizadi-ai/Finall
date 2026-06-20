@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اتاق‌ها — هتل اصفهان</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- نوار ناوبری -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <span class="logo-icon">🏛️</span>
+        <span>هتل اصفهان</span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="rooms.html" class="active">اتاق‌ها</a></li>
+        <li><a href="my-bookings.html">رزروهای من</a></li>
+        <li><a href="rooms.html" class="btn-nav-book">رزرو کنید</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false">
+        <span class="menu-icon-open">☰</span>
+        <span class="menu-icon-close">✕</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html"><span class="mm-icon">🏠</span> خانه</a>
+      <a href="rooms.html"><span class="mm-icon">🛏️</span> اتاق‌ها</a>
+      <a href="my-bookings.html"><span class="mm-icon">📋</span> رزروهای من</a>
+      <a href="rooms.html" class="btn-mobile-book">رزرو کنید</a>
+    </div>
+  </nav>
+
+  <!-- هدر صفحه -->
+  <div style="background:linear-gradient(135deg,#0c4a6e,#0891b2);padding:3rem 1.5rem;text-align:center;color:white;">
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;margin-bottom:0.5rem;">اتاق‌های هتل اصفهان</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;">بهترین اتاق را متناسب با نیازتان انتخاب کنید</p>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;">
+
+    <!-- نوار فیلتر و جستجو -->
+    <div class="filter-bar">
+      <!-- جستجو -->
+      <div class="filter-group" style="flex:2;">
+        <label class="filter-label">جستجو</label>
+        <input
+          type="text"
+          id="searchInput"
+          class="form-input"
+          placeholder="نام اتاق را بنویسید..."
+        />
+      </div>
+
+      <!-- فیلتر نوع اتاق -->
+      <div class="filter-group">
+        <label class="filter-label">نوع اتاق</label>
+        <select id="typeFilter" class="form-select">
+          <option value="all">همه انواع</option>
+          <option value="standard">استاندارد</option>
+          <option value="deluxe">دلوکس</option>
+          <option value="suite">سوئیت</option>
+          <option value="royal">رویال</option>
+        </select>
+      </div>
+
+      <!-- فیلتر قیمت -->
+      <div class="filter-group">
+        <label class="filter-label">حداکثر قیمت (تومان)</label>
+        <select id="priceFilter" class="form-select">
+          <option value="99999999">همه قیمت‌ها</option>
+          <option value="1500000">تا ۱,۵۰۰,۰۰۰</option>
+          <option value="2500000">تا ۲,۵۰۰,۰۰۰</option>
+          <option value="4000000">تا ۴,۰۰۰,۰۰۰</option>
+          <option value="6000000">تا ۶,۰۰۰,۰۰۰</option>
+        </select>
+      </div>
+
+      <!-- فیلتر ظرفیت -->
+      <div class="filter-group">
+        <label class="filter-label">تعداد نفرات</label>
+        <select id="capacityFilter" class="form-select">
+          <option value="0">هر ظرفیتی</option>
+          <option value="1">۱ نفر</option>
+          <option value="2">۲ نفر</option>
+          <option value="3">۳ نفر</option>
+          <option value="4">۴ نفر یا بیشتر</option>
+        </select>
+      </div>
+
+      <!-- دکمه ریست -->
+      <div class="filter-group" style="flex:0 0 auto;">
+        <label class="filter-label">&nbsp;</label>
+        <button id="resetBtn" class="btn-outline" style="width:100%;">پاک کردن</button>
+      </div>
+    </div>
+
+    <!-- تعداد نتایج -->
+    <div style="margin-bottom:1.5rem;color:#64748b;font-size:0.9rem;" id="resultCount"></div>
+
+    <!-- گرید اتاق‌ها -->
+    <div class="rooms-grid" id="roomsGrid"></div>
+
+    <!-- حالت خالی -->
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <div class="empty-icon">🔍</div>
+      <h3>اتاقی پیدا نشد</h3>
+      <p>فیلترهای جستجو را تغییر دهید یا همه را پاک کنید</p>
+      <button onclick="resetFilters()" class="btn-primary" style="margin-top:1rem;">پاک کردن فیلترها</button>
+    </div>
+
+  </div>
+
+  <!-- فوتر -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">🏛️ هتل اصفهان</div>
+          <p style="font-size:0.88rem;line-height:1.9;">در قلب تاریخی‌ترین شهر ایران.</p>
+        </div>
+        <div>
+          <div class="footer-title">لینک‌های سریع</div>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="rooms.html">اتاق‌ها</a></li>
+            <li><a href="my-bookings.html">رزروهای من</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">تماس با ما</div>
+          <ul class="footer-links">
+            <li><a href="#">📍 اصفهان، میدان نقش‌جهان</a></li>
+            <li><a href="#">📞 ۰۳۱-۱۲۳۴-۵۶۷۸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ۱۴۰۴ هتل اصفهان</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

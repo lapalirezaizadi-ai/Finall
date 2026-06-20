@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هتل اصفهان — رزرو آسان</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <span class="logo-icon">🏛️</span>
+        <span>هتل اصفهان</span>
+      </a>
+
+      <ul class="navbar-links">
+        <li><a href="index.html" class="active">خانه</a></li>
+        <li><a href="rooms.html">اتاق‌ها</a></li>
+        <li><a href="my-bookings.html">رزروهای من</a></li>
+        <li><a href="rooms.html" class="btn-nav-book">رزرو کنید</a></li>
+      </ul>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false">
+        <span class="menu-icon-open">☰</span>
+        <span class="menu-icon-close">✕</span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html"><span class="mm-icon">🏠</span> خانه</a>
+      <a href="rooms.html"><span class="mm-icon">🛏️</span> اتاق‌ها</a>
+      <a href="my-bookings.html"><span class="mm-icon">📋</span> رزروهای من</a>
+      <a href="rooms.html" class="btn-mobile-book">رزرو کنید</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge fade-in">✨ بهترین تجربه اقامت در قلب ایران</div>
+      <h1 class="fade-in fade-in-delay-1">
+        رزرو آسان در<br/>
+        <span class="accent">هتل اصفهان</span>
+      </h1>
+      <p class="fade-in fade-in-delay-2">
+        لوکس‌ترین اقامتگاه در کنار میدان نقش‌جهان.<br/>
+        تاریخ، هنر و آسایش در یک‌جا.
+      </p>
+      <div class="flex gap-4 flex-wrap fade-in fade-in-delay-3">
+        <a href="rooms.html" class="btn-gold">مشاهده اتاق‌ها</a>
+        <a href="rooms.html" class="btn-outline text-white" style="border-color:rgba(255,255,255,0.5)">رزرو سریع</a>
+      </div>
+
+      <!-- آمار کوچک -->
+      <div class="flex gap-8 mt-10 fade-in fade-in-delay-4" style="flex-wrap:wrap;">
+        <div style="color:white; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; color:#38bdf8;">۵۰+</div>
+          <div style="font-size:0.8rem; color:rgba(255,255,255,0.7);">اتاق لوکس</div>
+        </div>
+        <div style="color:white; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; color:#38bdf8;">۱۵</div>
+          <div style="font-size:0.8rem; color:rgba(255,255,255,0.7);">سال تجربه</div>
+        </div>
+        <div style="color:white; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; color:#38bdf8;">۴.۹</div>
+          <div style="font-size:0.8rem; color:rgba(255,255,255,0.7);">امتیاز میهمانان</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 5rem 1.5rem; max-width:1200px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+      <div>
+        <div class="section-badge">درباره ما</div>
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; margin:0.7rem 0 1rem; line-height:1.4;">
+          میراث‌دار هزار سال<br/>هنر و معماری اصفهان
+        </h2>
+        <p style="color:#475569; line-height:2; margin-bottom:1.2rem;">
+          هتل اصفهان در قلب تاریخی‌ترین شهر ایران قرار دارد.
+          طراحی داخلی الهام‌گرفته از کاشی‌کاری‌های مسجد امام و نقوش هنری دوره صفویه،
+          تجربه‌ای منحصربه‌فرد از ترکیب اصالت ایرانی و راحتی مدرن را ارائه می‌دهد.
+        </p>
+        <p style="color:#475569; line-height:2; margin-bottom:1.5rem;">
+          تنها ۵ دقیقه پیاده‌روی تا میدان نقش‌جهان،
+          با ۵۰ اتاق و سوئیت طراحی‌شده با دقت فراوان.
+        </p>
+        <a href="rooms.html" class="btn-primary">مشاهده اتاق‌ها ←</a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <img src="image/lobby.png"
+             alt="فضای داخلی هتل"
+             style="width:100%; border-radius:16px; height:180px; object-fit:cover;" />
+        <img src="image/service.jpg"
+             alt="لابی هتل"
+             style="width:100%; border-radius:16px; height:180px; object-fit:cover; margin-top:1.5rem;" />
+        <img src="image/food.jpg"
+             alt="رستوران هتل"
+             style="width:100%; border-radius:16px; height:180px; object-fit:cover; margin-top:-1.5rem;" />
+        <img src="image/out.jpg"
+             alt="استخر هتل"
+             style="width:100%; border-radius:16px; height:180px; object-fit:cover;" />
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="section-header">
+        <div class="section-badge">امکانات ما</div>
+        <h2>خدماتی فراتر از انتظار</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+        <div class="feature-item">
+          <div class="feature-icon">🍽️</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">رستوران سنتی</div>
+            <div style="font-size:0.82rem; color:#64748b;">غذاهای اصیل ایرانی</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏊</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">استخر سرپوشیده</div>
+            <div style="font-size:0.82rem; color:#64748b;">باز تمام روز</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧖</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;"> آرامش</div>
+            <div style="font-size:0.82rem; color:#64748b;">ماساژ و مراقبت پوست</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚗</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">ترانسفر رایگان</div>
+            <div style="font-size:0.82rem; color:#64748b;">فرودگاه تا هتل</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📶</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">WiFi پرسرعت</div>
+            <div style="font-size:0.82rem; color:#64748b;">در تمام هتل رایگان</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎭</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem;">تور گردشگری</div>
+            <div style="font-size:0.82rem; color:#64748b;">هر روز از هتل</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:4rem 1.5rem; background:linear-gradient(180deg, #f0f9ff 0%, #fdf8f0 100%);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-header">
+        <div class="section-badge">محبوب‌ترین‌ها</div>
+        <h2>اتاق‌های ویژه ما</h2>
+        <p>از استاندارد تا سوئیت رویال — هر سلیقه‌ای یک انتخاب دارد</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="rooms-grid" id="popularRooms"></div>
+
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="rooms.html" class="btn-outline">مشاهده همه اتاق‌ها ←</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:4rem 1.5rem; max-width:1200px; margin:0 auto;">
+    <div class="section-header">
+      <div class="section-badge">نظرات مهمانان</div>
+      <h2>آن‌ها چه می‌گویند؟</h2>
+      <p>تجربه واقعی مهمانانی که اصفهان را از هتل ما دیدند</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem;">
+      <!-- نظر ۱ -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "اتاق خیلی تمیز و دلنشین بود. از پنجره منظره فوق‌العاده‌ای به مسجد امام داشتیم.
+          کارکنان هتل هم بسیار مؤدب و خوش‌برخورد بودند."
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ع</div>
+          <div>
+            <div class="reviewer-name">علی رضایی</div>
+            <div class="reviewer-date">اردیبهشت ۱۴۰۴</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- نظر ۲ -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "سوئیت خانوادگی برای سفر با بچه‌ها ایده‌آل بود. فضای بزرگ،
+          صبحانه خوشمزه و استخر هتل که بچه‌ها خیلی لذت بردند. حتماً دوباره میایم."
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ف</div>
+          <div>
+            <div class="reviewer-name">فاطمه احمدی</div>
+            <div class="reviewer-date">خرداد ۱۴۰۴</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- نظر ۳ -->
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">
+          "برای سفر کاری آمدم. اتاق اجرایی کاملاً امکانات کارم را داشت.
+          WiFi سریع و میز کار راحت. یه نکته: صبحانه می‌تونست متنوع‌تر باشه."
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">م</div>
+          <div>
+            <div class="reviewer-name">محمد کریمی</div>
+            <div class="reviewer-date">فروردین ۱۴۰۴</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- نظر ۴ -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          "سوئیت رویال یه تجربه فوق‌العاده بود! دکوراسیون مثل کاخ صفوی،
+          خدمات باتلر عالی و منظره‌ای که هیچ‌وقت فراموش نمی‌کنم. ارزش هر ریالش رو داشت."
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ز</div>
+          <div>
+            <div class="reviewer-name">زهرا موسوی</div>
+            <div class="reviewer-date">بهمن ۱۴۰۳</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(135deg, #0c4a6e 0%, #0891b2 100%); padding:4rem 1.5rem; text-align:center; margin-top:2rem;">
+    <div style="max-width:600px; margin:0 auto; color:white;">
+      <div style="font-size:2.5rem; margin-bottom:0.5rem;">🏛️</div>
+      <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:0.7rem;">
+        همین حالا رزرو کنید
+      </h2>
+      <p style="color:rgba(255,255,255,0.8); margin-bottom:1.8rem; font-size:0.95rem;">
+        برای رزروهای بیش از ۳ شب، ۱۰٪ تخفیف ویژه دریافت کنید
+      </p>
+      <a href="rooms.html" class="btn-gold">مشاهده اتاق‌ها و رزرو</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">🏛️ هتل اصفهان</div>
+          <p style="font-size:0.88rem; line-height:1.9; margin-bottom:1rem;">
+            در قلب تاریخی‌ترین شهر ایران،<br/>
+            جایی که تاریخ و آرامش درهم می‌آمیزند.
+          </p>
+          <div style="display:flex; gap:0.5rem;">
+            <a href="#" style="background:rgba(255,255,255,0.1); padding:0.4rem 0.8rem; border-radius:8px; color:white; text-decoration:none; font-size:0.85rem;">اینستاگرام</a>
+            <a href="#" style="background:rgba(255,255,255,0.1); padding:0.4rem 0.8rem; border-radius:8px; color:white; text-decoration:none; font-size:0.85rem;">واتساپ</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">لینک‌های سریع</div>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="rooms.html">اتاق‌ها</a></li>
+            <li><a href="my-bookings.html">رزروهای من</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">تماس با ما</div>
+          <ul class="footer-links">
+            <li><a href="#">📍 اصفهان، میدان نقش‌جهان</a></li>
+            <li><a href="#">📞 ۰۳۱-۳۲۳۴-۵۶۷۸</a></li>
+            <li><a href="#">✉️ info@hotel-isfahan.ir</a></li>
+            <li><a href="#">🕐 پاسخگویی ۲۴ ساعته</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ۱۴۰۵ هتل اصفهان — تمامی حقوق محفوظ است</span>
+        <span style="color:rgba(255,255,255,0.4); font-size:0.8rem;">ساخته‌شده با ❤️ برای مهمانان عزیز</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

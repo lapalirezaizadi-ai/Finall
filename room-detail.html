@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جزئیات اتاق — هتل اصفهان</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- نوار ناوبری -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <span class="logo-icon">🏛️</span>
+        <span>هتل اصفهان</span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="rooms.html">اتاق‌ها</a></li>
+        <li><a href="my-bookings.html">رزروهای من</a></li>
+        <li><a href="rooms.html" class="btn-nav-book">رزرو کنید</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false">
+        <span class="menu-icon-open">☰</span>
+        <span class="menu-icon-close">✕</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html"><span class="mm-icon">🏠</span> خانه</a>
+      <a href="rooms.html"><span class="mm-icon">🛏️</span> اتاق‌ها</a>
+      <a href="my-bookings.html"><span class="mm-icon">📋</span> رزروهای من</a>
+      <a href="rooms.html" class="btn-mobile-book">رزرو کنید</a>
+    </div>
+  </nav>
+
+  <!-- breadcrumb -->
+  <div style="background:white;border-bottom:1px solid #e2d9c8;padding:0.8rem 1.5rem;">
+    <div style="max-width:1200px;margin:0 auto;font-size:0.85rem;color:#64748b;">
+      <a href="index.html" style="color:#0891b2;text-decoration:none;">خانه</a>
+      <span style="margin:0 0.4rem;">›</span>
+      <a href="rooms.html" style="color:#0891b2;text-decoration:none;">اتاق‌ها</a>
+      <span style="margin:0 0.4rem;">›</span>
+      <span id="breadcrumbName">جزئیات اتاق</span>
+    </div>
+  </div>
+
+  <!-- محتوای اصلی -->
+  <div style="max-width:1200px;margin:0 auto;padding:2rem 1.5rem;">
+
+    <!-- پیام خطا اگر اتاق پیدا نشد -->
+    <div id="errorMsg" style="display:none;text-align:center;padding:4rem 1rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">😕</div>
+      <h2 style="margin-bottom:0.5rem;">اتاق پیدا نشد</h2>
+      <a href="rooms.html" class="btn-primary" style="margin-top:1rem;display:inline-block;">برگشت به لیست اتاق‌ها</a>
+    </div>
+
+    <!-- محتوای اصلی اتاق -->
+    <div id="roomContent" style="display:none;">
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start;">
+
+        <!-- ستون چپ: گالری و اطلاعات -->
+        <div>
+
+          <!-- گالری عکس -->
+          <div class="room-gallery" id="gallery">
+            <img id="mainImage" src="" alt="عکس اتاق" />
+            <button class="gallery-btn gallery-btn-prev" id="prevBtn" type="button" aria-label="عکس قبلی">‹</button>
+            <button class="gallery-btn gallery-btn-next" id="nextBtn" type="button" aria-label="عکس بعدی">›</button>
+            <div class="gallery-dots" id="galleryDots"></div>
+          </div>
+
+          <!-- تامبنیل‌های کوچک -->
+          <div id="thumbs" style="display:flex;gap:0.6rem;margin-top:0.8rem;"></div>
+
+          <!-- نام و بج -->
+          <div style="margin-top:1.8rem;">
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.6rem;">
+              <span class="room-type-badge" id="roomTypeBadge"></span>
+              <div style="display:flex;gap:1.5rem;font-size:0.85rem;color:#64748b;">
+                <span id="roomCapacity"></span>
+                <span id="roomSize"></span>
+              </div>
+            </div>
+            <h1 id="roomName" style="font-size:1.8rem;font-weight:700;color:#1e293b;margin-bottom:1rem;"></h1>
+            <p id="roomDesc" style="color:#475569;line-height:2;font-size:0.96rem;"></p>
+          </div>
+
+          <!-- امکانات -->
+          <div style="margin-top:2rem;">
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:#1e293b;">🛎️ امکانات اتاق</h3>
+            <div id="amenitiesList" style="display:flex;flex-wrap:wrap;gap:0.4rem;"></div>
+          </div>
+
+          <!-- قوانین هتل -->
+          <div style="margin-top:2rem;background:white;border-radius:16px;padding:1.5rem;border:1px solid #e2d9c8;">
+            <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:1rem;color:#1e293b;">📋 قوانین هتل</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;font-size:0.88rem;color:#475569;">
+              <div style="display:flex;align-items:center;gap:0.5rem;">✅ ورود از ساعت ۱۴:۰۰</div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">⏰ خروج تا ساعت ۱۲:۰۰</div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">🚭 ممنوعیت سیگار</div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">🐾 ممنوعیت حیوان خانگی</div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">🍳 صبحانه رایگان</div>
+              <div style="display:flex;align-items:center;gap:0.5rem;">🔄 تغییر رایگان تا ۴۸ ساعت</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ستون راست: فرم رزرو -->
+        <div>
+          <div class="booking-form">
+            <div style="margin-bottom:1.5rem;">
+              <div id="formPrice" style="font-size:1.6rem;font-weight:700;color:#0891b2;"></div>
+              <div style="font-size:0.82rem;color:#64748b;">به ازای هر شب</div>
+            </div>
+
+            <!-- ستاره‌ها -->
+            <div style="color:#f59e0b;font-size:1rem;margin-bottom:1.2rem;">★★★★★ <span style="font-size:0.82rem;color:#64748b;">۴.۹ امتیاز</span></div>
+
+            <!-- تاریخ ورود (تقویم شمسی) -->
+            <div class="form-group">
+              <label class="form-label">📅 تاریخ ورود</label>
+              <div class="shamsi-field">
+                <button type="button" class="shamsi-trigger" aria-label="باز کردن تقویم">📅</button>
+                <input type="text" id="checkInField" class="" placeholder="انتخاب تاریخ" />
+                <input type="hidden" id="checkInYMD" />
+              </div>
+            </div>
+
+            <!-- تاریخ خروج (تقویم شمسی) -->
+            <div class="form-group">
+              <label class="form-label">📅 تاریخ خروج</label>
+              <div class="shamsi-field">
+                <button type="button" class="shamsi-trigger" aria-label="باز کردن تقویم">📅</button>
+                <input type="text" id="checkOutField" placeholder="انتخاب تاریخ" />
+                <input type="hidden" id="checkOutYMD" />
+              </div>
+            </div>
+
+            <!-- تعداد نفرات -->
+            <div class="form-group">
+              <label class="form-label">👤 تعداد نفرات</label>
+              <select id="guests" class="form-select">
+                <option value="1">۱ نفر</option>
+                <option value="2" selected>۲ نفر</option>
+                <option value="3">۳ نفر</option>
+                <option value="4">۴ نفر</option>
+              </select>
+            </div>
+
+            <!-- نام مهمان -->
+            <div class="form-group">
+              <label class="form-label">👤 نام و نام‌خانوادگی</label>
+              <input type="text" id="guestName" class="form-input" placeholder="مثلاً: علی رضایی" />
+            </div>
+
+            <!-- شماره تماس -->
+            <div class="form-group">
+              <label class="form-label">📱 شماره تماس</label>
+              <input type="tel" id="guestPhone" class="form-input" placeholder="مثلاً: ۰۹۱۲۳۴۵۶۷۸۹" />
+            </div>
+
+            <!-- خلاصه قیمت -->
+            <div class="price-summary" id="priceSummary" style="display:none;">
+              <div class="price-row">
+                <span id="nightsLabel">۱ شب</span>
+                <span id="basePrice">—</span>
+              </div>
+              <div class="price-row">
+                <span>مالیات و عوارض (۱۰٪)</span>
+                <span id="taxPrice">—</span>
+              </div>
+              <div class="price-row">
+                <span>مجموع</span>
+                <span id="totalPrice">—</span>
+              </div>
+            </div>
+
+            <!-- پیام خطا -->
+            <div id="formError" style="display:none;background:#fee2e2;color:#dc2626;padding:0.7rem 1rem;border-radius:10px;font-size:0.88rem;margin-bottom:1rem;"></div>
+
+            <!-- دکمه رزرو -->
+            <button id="bookBtn" class="btn-gold" style="width:100%;padding:0.9rem;">
+              🏨 رزرو کردن
+            </button>
+
+            <div style="text-align:center;margin-top:0.8rem;font-size:0.8rem;color:#64748b;">
+              🔒 پرداخت امن · لغو رایگان تا ۴ ساعت
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- پیام موفقیت -->
+  <div class="success-toast" id="successToast">
+    ✅ رزرو شما با موفقیت ثبت شد!
+  </div>
+
+  <!-- فوتر -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">🏛️ هتل اصفهان</div>
+          <p style="font-size:0.88rem;line-height:1.9;">در قلب تاریخی‌ترین شهر ایران.</p>
+        </div>
+        <div>
+          <div class="footer-title">لینک‌های سریع</div>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="rooms.html">اتاق‌ها</a></li>
+            <li><a href="my-bookings.html">رزروهای من</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">تماس با ما</div>
+          <ul class="footer-links">
+            <li><a href="#">📍 اصفهان، میدان نقش‌جهان</a></li>
+            <li><a href="#">📞 ۰۳۱-۱۲۳۴-۵۶۷۸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ۱۴۰۴ هتل اصفهان</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- استایل ریسپانسیو برای این صفحه -->
+  <style>
+    @media (max-width: 900px) {
+      #roomContent > div {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
